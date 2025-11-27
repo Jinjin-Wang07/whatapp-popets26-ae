@@ -1,0 +1,42 @@
+{
+	"name": "Fingerprinting",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"runArgs": [
+		// "--network=host",
+		"--privileged",
+		// "--hostname=container",
+		"--device=/dev/bus",
+		"--volume=/dev/serial:/dev/serial",
+		"--volume=/dev/shm:/dev/shm",
+		"--volume=/etc/timezone:/etc/timezone:ro",
+		"--volume=/etc/localtime:/etc/localtime:ro",
+		"--init",
+  		"-it"
+	],
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "/bin/bash /tmp/setup.sh",
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.debugpy",
+				"ms-vscode.cpptools",
+				"ms-vscode.cmake-tools",
+				"ms-vscode.cpptools-extension-pack",
+			],
+			"settings": {
+				"python.defaultInterpreterPath": "/usr/bin/python3",
+			}
+		}
+	}
+}

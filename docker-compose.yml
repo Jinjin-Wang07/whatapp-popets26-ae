@@ -1,0 +1,20 @@
+services:
+  fingerprinting:
+    container_name: fingerprinting
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    privileged: true
+    tty: true
+    stdin_open: true
+
+    volumes:
+      # For real time usrp
+      - /dev/serial:/dev/serial
+      - /dev/shm:/dev/shm
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+    devices:
+      # For real time usrp
+      - /dev/bus:/dev/bus
