@@ -80,8 +80,8 @@ run_cnn_model() {
     echo ""
     
     # Check if CNN dir exist
-    if [ ! -z "${cnn_dir}" ]; then
-        print_error "CNN folder not found"
+    if [ ! -d "${cnn_dir}" ]; then
+        print_error "CNN folder not found: ${cnn_dir}"
         exit 1
     fi
     
