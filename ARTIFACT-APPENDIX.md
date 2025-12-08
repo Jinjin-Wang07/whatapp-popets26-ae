@@ -75,38 +75,43 @@ The scaled-down experiments require about 25 GiB of disk space, including:
 ### Accessibility
 
 * Main codebase: https://github.com/Jinjin-Wang07/whatapp-popets26-ae.git
-* Associated Artifacts: https://github.com/Jinjin-Wang07/whatapp-pdcp-defense.git
-* Dataset: [TO_BE_UPLOADED]
+* Associated Artifacts: 
+  * https://github.com/Jinjin-Wang07/whatapp-app-fingerprinting.git
+  * https://github.com/Jinjin-Wang07/whatapp-pdcp-defense.git
+* Dataset: https://doi.org/10.5281/zenodo.17722145
 
 ### Set up the environment
-#### 1. Fetch the main artifact evaluation project from github
+#### 1. Retrieve the main artifact evaluation project from github
 
 ```bash
 git clone https://github.com/Jinjin-Wang07/whatapp-popets26-ae.git
 cd whatapp-popets26-ae
 ```
 
-#### 2. Download the dataset
-Please download the dataset archive `whatapp-pdcp-dataset.tar.gz` from [TO_BE_UPLOADED], and place it directly in the root of the AE project folder `whatapp-popets26-ae`. After placing the dataset, the folder structure should look as follows:
-```bash
-whatapp-popets26-ae
-├── 1_setup.sh
-├── 2_run_attack_models.sh
-├── 3_run_defense_demo.sh
-├── ARTIFACT-APPENDIX.md
-├── docker-compose.yml
-├── env_test.sh
-├── README.md
-└── whatapp-pdcp-dataset.tar.gz
-```
-
-Once the dataset is in place, you can set up the Docker environment using:
-
+#### 2. Run the setup script
+To set up the full environment, run:
 ```bash
 ./1_setup.sh
 ```
 
-After running 1_setup.sh, the Docker container will be built, and you will automatically enter the container shell.
+Executing `1_setup.sh` will automatically:
+
+1. Build the Docker container;
+2. Download and place the dataset under `/dataset/raw/` inside the container;
+3. Open an interactive shell within the container, positioned at `/workspaces`.
+
+After setup, the `/workspaces` directory will contain the following structure:
+
+```bash
+/workspaces
+├── 2_run_attack_models.sh
+├── 3_run_defense_demo.sh
+├── env_test.sh
+├── fingerprinting
+└── whatapp-pdcp-defense
+```
+
+The `/workspaces/fingerprinting/` directory contains all fingerprinting-related components, while the `/workspaces/whatapp-pdcp-defense/` directory contains our defense implementation.
 
 
 ### Testing the Environment

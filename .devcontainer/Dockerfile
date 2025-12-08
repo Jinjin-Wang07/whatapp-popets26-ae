@@ -70,18 +70,12 @@ RUN git clone https://github.com/Jinjin-Wang07/whatapp-pdcp-defense.git && \
 RUN git clone https://github.com/Jinjin-Wang07/whatapp-app-fingerprinting.git fingerprinting
 
 # Download and extract PDCP dataset
-COPY whatapp-pdcp-dataset.tar.gz /tmp/whatapp-pdcp-dataset.tar.gz
-RUN mkdir -p /dataset/raw && \
+# COPY whatapp-pdcp-dataset.tar.gz /tmp/whatapp-pdcp-dataset.tar.gz
+RUN wget -O /tmp/whatapp-pdcp-dataset.tar.gz "https://zenodo.org/records/17722145/files/whatapp-pdcp-dataset.tar.gz?download=1" && \
+    mkdir -p /dataset/raw && \
     tar -xzf /tmp/whatapp-pdcp-dataset.tar.gz -C /dataset/raw && \
     rm /tmp/whatapp-pdcp-dataset.tar.gz
 
 COPY 2_run_attack_models.sh /workspaces/2_run_attack_models.sh
 COPY 3_run_defense_demo.sh /workspaces/3_run_defense_demo.sh
 COPY env_test.sh /workspaces/env_test.sh
-
-# wget -O /tmp/whatapp-pdcp-dataset.tar.gz "https://zenodo.org/records/17722145/files/whatapp-pdcp-dataset.tar.gz?download=1&preview=1" 
-    
-    # && \
-    # tar -xzf /tmp/whatapp-pdcp-dataset.tar.gz -C /dataset/raw && \
-    # rm /tmp/whatapp-pdcp-dataset.tar.gz && \
-    # echo "Dataset extracted to /dataset/raw"
