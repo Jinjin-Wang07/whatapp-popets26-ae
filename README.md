@@ -18,11 +18,11 @@ This repository provides the implementation of our mobile application fingerprin
 ```
 
 ## Overview
-This repository is for the artifact evalution, the ARTIFACT-APPENDIX.md described how to setup the docker container, run the attack models and evaluate our defense implementation.
+This repository is prepared for artifact evalution. Detailed instructions for setting up the Docker environment, running the attack models, and testing our defense implementation are provided in `ARTIFACT-APPENDIX.md`.
 
 
-The related code and dataset can be found in : 
-* Associated Artifacts: 
+The related source code and dataset used in our work can be accessed through the following links:
+* Source Code: 
   * https://github.com/Jinjin-Wang07/whatapp-app-fingerprinting.git
   * https://github.com/Jinjin-Wang07/whatapp-pdcp-defense.git
 * Dataset: https://doi.org/10.5281/zenodo.17722145
