@@ -5,7 +5,6 @@ Paper title: **What-App? App Usage Detection Using Encrypted LTE/5G Traffic**
 Requested Badges:
   - **Available**
   - **Functional**
-  - **Reproduced**
 
 ## Description
 
