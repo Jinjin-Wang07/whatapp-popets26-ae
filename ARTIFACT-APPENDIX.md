@@ -57,8 +57,11 @@ The artifact includes a reduced-size dataset and CPU-compatible configuration sp
 We tested all the code in the following software environments:
 
 * Linux computer:
-   * OS: Ubuntu 22.04.1 LTS
-   * Docker: version 28.1.1
+  * OS: Ubuntu 22.04.1 (Linux kernel 6.8.x)
+  * Docker: version 28.1.1
+  * System libraries: libsctp-dev (v1.0.19)
+
+Note: SCTP support is required on the **host machine**.
 
 ### Estimated Time and Storage Consumption
 
